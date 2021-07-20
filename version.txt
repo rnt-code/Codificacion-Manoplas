@@ -1,0 +1,19 @@
+Codificación de Manoplas - Especificación BSIP E.UOA1391
+
+v1.0 Lanzamiento
+21/04/2021
+
+v1.01 
+- Correcciones menores al documento index.html que no afectan a la funcionalidad. Ahora el código valida en el W3C HTML validator (https://validator.w3.org/)
+- Se quitaron los espacios en blanco al archivo jpg del logo de BGH.
+21/04/2021
+
+v2.0.0
+- Se escribe el código para la calculadora inversa
+29/04/21
+
+v2.1.0
+- Se agregaron rutinas de error para la calculadora inversa
+03/05/21
+
+--Ramón Taboada

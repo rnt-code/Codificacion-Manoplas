@@ -1,0 +1,49 @@
+#header {
+    background-color: #1d84c3;
+    background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
+    height: 170px;
+}
+
+#header {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header-img {
+    position: relative;
+    top: 32px;
+    left: 20px;
+}
+
+.tituloi {
+    margin-left: 20px;
+}
+
+.subtituloi {
+    margin-left: 20px;
+}
+
+.titulo-baner {
+    position: relative;
+    left: 30px;
+    top: 32px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.botones {
+    margin-left: 30px;
+}
+
+img.spec {
+    margin-top: 16px;
+    margin-left: 23px;
+    max-width: 1080px;
+}
+
+.version {
+    font-size: small;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
