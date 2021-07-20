@@ -14,6 +14,7 @@ v2.0.0
 
 v2.1.0
 - Se agregaron rutinas de error para la calculadora inversa
+- Se agregó la imagen de la Referencia Rápida en el index
 03/05/21
 
 --Ramón Taboada
