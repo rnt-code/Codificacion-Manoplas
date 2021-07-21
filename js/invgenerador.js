@@ -112,6 +112,7 @@ function marcakit(marcak) {
     if(marcak == "HS") return "Hisense";
     if(marcak == "MD") return "Midea";
     if(marcak == "AX") return "Aux";
+    if(marcak == "SM") return "Samsung";
     return "ERR";
 }
 
