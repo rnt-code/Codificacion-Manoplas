@@ -34,18 +34,13 @@
                 <button class="btn btn-warning" type="button" onclick="location.href='menu_configuracion.html'">Ir a Configuración</button>
             </div>
             <hr>
-            <section>
-            <header>
-                <h5 class="subtitulo">Agregar prueba</h5>
-            </header>
-                <form method="post" action="registrar_alta_tp.php">
-                    <label for="tpcodigo">Código</label>
-                    <input type="text" name="tpcodigo" id="tipocodigo" required><br>
-                    <label for="tpnombre">Tipo de prueba</label>
-                    <input type="text" name="tpnombre" id="tpnombre" required><br>
-                    <input type="submit" value="Enviar">
-                </form>
-            </section>
+            <form method="post" action="registrar_alta_tp.php">
+                <label for="tpcodigo">Código</label>
+                <input type="text" name="tpcodigo" id="tipocodigo" required><br>
+                <label for="tpnombre">Tipo de prueba</label>
+                <input type="text" name="tpnombre" id="tpnombre" required><br>
+                <input type="submit" value="Enviar">
+            </form>
         </main>
         <footer>
             <label class="version"></label>
