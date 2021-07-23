@@ -30,17 +30,13 @@
                 </header>
                 <hr>
             </section>
-            <div class="botones">
-                <button class="btn btn-primary" type="button" onclick="location.href='directa.html'">Calculadora directa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='menu_configuracion.html'">Configuración</button>
-            </div>
-            <section>
-                <header>
-                    <h5 hidden>Referencia rápida</h5>
-                </header>
-                <img class="spec" src="image/quickreference2.jpg" alt="quick reference">
-            </section>
+            <form method="post" action="registrar_alta_tp.php">
+                <label for="tpcodigo">Código</label>
+                <input type="text" name="tpcodigo" id="tipocodigo" required><br>
+                <label for="tpnombre">Tipo de prueba</label>
+                <input type="text" name="tpnombre" id="tpnombre" required><br>
+                <input type="submit" value="Enviar">
+            </form>
         </main>
         <footer>
             <label class="version"></label>
