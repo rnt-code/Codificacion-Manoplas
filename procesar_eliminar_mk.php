@@ -2,7 +2,7 @@
     $id = $_GET["id"];
     //echo"<br>ID=".$id;
 
-    $sql = "DELETE FROM marca_kit WHERE id_fun = $id;";
+    $sql = "DELETE FROM marca_kit WHERE id_mk = $id;";
     //echo"<br>Consulta=".$sql;
 
     include("conexion.php");
