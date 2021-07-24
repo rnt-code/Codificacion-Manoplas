@@ -16,10 +16,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/list.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>BSIP E. Nº UOA1391</title>
+        <title>Tipos de prueba</title>
     </head>
     <body>
         <header id="header">
@@ -32,36 +33,42 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Especificación BSIP E.UOA1391</h5>
+                    <h5>Tipos de prueba disponibles</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
-                <button class="btn btn-warning" type="button" onclick="location.href='menu_configuracion.html'">Ir a Configuración</button>
+                <div class="p-2 bd-highlight">
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
+                </div>
             </div>
             <hr>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Tipo</th>
-                    <th>Modificar</th>
-                    <th>Eliminar</th>
-                </tr>
-                <?php
-                while($vec = mysqli_fetch_array($res)) {
-                ?>
-                <tr>
-                    <td><?php echo $vec[0];?></td>
-                    <td><?php echo $vec[1];?></td>
-                    <td><?php echo $vec[2];?></td>
-                    <td><a href="form_modificar_tp.php?id=<?php echo $vec[0];?>">Modificar</a></td>
-                    <td><a href="procesar_eliminar_tp.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
-                <?php		
-                }
-                ?>
-                </tr>
-            </table>
+            <div style="margin-left: 37px;">
+                <table>
+                    <tr>
+                        <th>[ ID ]</th>
+                        <th>[ Código ]</th>
+                        <th>[ Tipo ]</th>
+                        <th colspan="2">[ Acciones ]</th>
+                        
+                    </tr>
+                    <?php
+                    while($vec = mysqli_fetch_array($res)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $vec[0];?></td>
+                        <td><?php echo $vec[1];?></td>
+                        <td><?php echo $vec[2];?></td>
+                        <td><a href="form_modificar_tp.php?id=<?php echo $vec[0];?>">Modificar</a></td>
+                        <td><a href="procesar_eliminar_tp.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
+                    <?php		
+                    }
+                    ?>
+                    </tr>
+                </table>
+            </div>
+            
         </main>
         <footer>
             <label class="version"></label>

@@ -1,19 +1,28 @@
+<?php
+    $tpcod = $_POST["tpcodigo"];
+    $tpnom = $_POST["tpnombre"];
+
+    $sql = "INSERT INTO tipo_prueba (tp_codigo, tp_nombre) VALUES ('$tpcod', '$tpnom')";
+    //echo"<br>Consulta: ".$sql;
+    include("conexion.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="icon/favicon.png">
+        <link rel="icon" type="image/png" href="icon/runconfig.png">
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/alta.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>BSIP E. Nº UOA1391</title>
+        <title>Registrar</title>
     </head>
     <body>
         <header id="header">
@@ -26,37 +35,33 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Especificación BSIP E.UOA1391</h5>
+                    <h5>Agregar tipo de prueba</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="p-2 bd-highlight">
-                        <button class="btn btn-primary" type="button" onclick="location.href='directa.html'">Calculadora directa</button>
-                    </div>
-                    <div class="p-2 bd-highlight">
-                        <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>
-                    </div>
-                    <div class="ms-auto p-2 bd-highlight">
-                        <button class="btn btn-outline-light btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Configuración</button>
-                    </div>
-                </div>
+                <div class="p-2 bd-highlight">
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
+                </div>              
             </div>
-            <!--
-            <div class="botones">
-                <button class="btn btn-primary" type="button" onclick="location.href='directa.html'">Calculadora directa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='menu_configuracion.html'">Configuración</button>
-            </div>
-            -->
             <hr>
-            <section>
-                <header>
-                    <h5 hidden>Referencia rápida</h5>
-                </header>
-                <img class="spec" src="image/quickreference2.jpg" alt="quick reference">
-            </section>
+            <?php
+                $res = mysqli_query($conexion, $sql);
+                if($res) {
+                    //echo"<br>Agregado exitoso";
+                    header("Refresh: 0; url=listar_tp.php");
+                }
+                else {
+                    ?>
+                    <div style="margin-left: 37px;">
+                    <p>¡Falló la agregación!</p>
+                    </div>
+                    <?php
+                    //echo"<br>Falló la agregación";
+                    //header("Refresh: 3; url=listar_tp.php");
+                }
+            ?>
         </main>
         <footer>
             <label class="version"></label>

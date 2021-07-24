@@ -1,8 +1,10 @@
 <?php
-$id = $_GET["id"];
+$idtp = $_POST["idtp"];
+$tpcod = $_POST["tpcodigo"];
+$tpnom = $_POST["tpnombre"];
 //echo"<br>ID=".$id;
 
-$sql = "DELETE FROM tipo_prueba WHERE id_tp = $id;";
+$sql = "UPDATE tipo_prueba SET tp_codigo='$tpcod', tp_nombre='$tpnom' WHERE id_tp = $idtp";
 //echo"<br>Consulta=".$sql;
 
 include("conexion.php");
@@ -35,14 +37,14 @@ $res = mysqli_query($conexion, $sql);
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Eliminación</h5>
+                    <h5>Modificar tipo de prueba</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
                 </div>
             </div>
             <hr>

@@ -1,0 +1,15 @@
+tr:hover {background-color: #ececec;}    
+
+table {
+    width: 300px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+th {
+    font-weight: normal;
+    font-size: 13.5px;
+}

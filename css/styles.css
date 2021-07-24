@@ -47,6 +47,7 @@ img.spec {
 
 .botones {
     margin-left: 30px;
+    margin-right: 30px;
 }
 
 .form-check {
@@ -80,4 +81,8 @@ img.spec {
 
 .backhome {
     text-align: center;
+}
+
+.config-width {
+    width: 150px;
 }

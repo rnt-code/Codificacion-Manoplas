@@ -1,3 +1,9 @@
+<?php
+    include("conexion.php");
+
+    $sql = "SELECT * FROM capacidad";
+    $res = mysqli_query($conexion, $sql);
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -31,32 +37,31 @@
             </section>
             <hr>
             <div class="botones">
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="p-2 bd-highlight">
-                        <button class="btn btn-primary" type="button" onclick="location.href='directa.html'">Calculadora directa</button>
-                    </div>
-                    <div class="p-2 bd-highlight">
-                        <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>
-                    </div>
-                    <div class="ms-auto p-2 bd-highlight">
-                        <button class="btn btn-outline-light btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Configuración</button>
-                    </div>
-                </div>
+                <button class="btn btn-warning" type="button" onclick="location.href='menu_configuracion.html'">Ir a Configuración</button>
             </div>
-            <!--
-            <div class="botones">
-                <button class="btn btn-primary" type="button" onclick="location.href='directa.html'">Calculadora directa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>
-                <button class="btn btn-primary" type="button" onclick="location.href='menu_configuracion.html'">Configuración</button>
-            </div>
-            -->
             <hr>
-            <section>
-                <header>
-                    <h5 hidden>Referencia rápida</h5>
-                </header>
-                <img class="spec" src="image/quickreference2.jpg" alt="quick reference">
-            </section>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Tipo</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+                <?php
+                while($vec = mysqli_fetch_array($res)) {
+                ?>
+                <tr>
+                    <td><?php echo $vec[0];?></td>
+                    <td><?php echo $vec[1];?></td>
+                    <td><?php echo $vec[2];?></td>
+                    <td><a href="form_modificar_tp.php?id=<?php echo $vec[0];?>">Modificar</a></td>
+                    <td><a href="procesar_eliminar_tp.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
+                <?php		
+                }
+                ?>
+                </tr>
+            </table>
         </main>
         <footer>
             <label class="version"></label>
