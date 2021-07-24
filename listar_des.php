@@ -1,7 +1,7 @@
 <?php
     include("conexion.php");
 
-    $sql = "SELECT * FROM capacidad";
+    $sql = "SELECT * FROM destino";
     $res = mysqli_query($conexion, $sql);
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>Lista Capacidades</title>
+        <title>Lista Destinos</title>
     </head>
     <body>
         <header id="header">
@@ -33,14 +33,14 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Capacidades disponibles</h5>
+                    <h5>Destinos disponibles</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_cap.html'">Agregar capacidad</button></td>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.html'">Agregar destino</button></td>
                 </div>
             </div>
             <hr>
@@ -59,8 +59,8 @@
                         <td><?php echo $vec[0];?></td>
                         <td><?php echo $vec[1];?></td>
                         <td><?php echo $vec[2];?></td>
-                        <td><a href="form_modificar_cap.php?id=<?php echo $vec[0];?>">Modificar</a></td>
-                        <td><a href="procesar_eliminar_cap.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
+                        <td><a href="form_modificar_des.php?id=<?php echo $vec[0];?>">Modificar</a></td>
+                        <td><a href="procesar_eliminar_des.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
                     <?php		
                     }
                     ?>

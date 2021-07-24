@@ -35,7 +35,7 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Modificar tipo de prueba</h5>
+                    <h5>Modificar Tipo de Prueba</h5>
                 </header>
             </section>
             <hr>
@@ -51,7 +51,7 @@
             <header>
                 <h5 hidden>Modificar prueba</h5>
             </header>
-                <form method="post" action="procesar_modificar_alta_tp.php">
+                <form method="post" action="procesar_modificar_tp.php">
                     <div class="desplazar-tabla">
                         <table>
                             <tr>
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td><label for="tpcodigo">Código:</label></td>
-                                <td><input type="text" name="tpcodigo" id="tipocodigo" value="<?php echo $vec[1];?>" required></td>
+                                <td><input type="text" name="tpcodigo" id="tpcodigo" value="<?php echo $vec[1];?>" required></td>
                             </tr>
                             <tr>
                                 <td><label for="tpnombre">Tipo de prueba:</label></td>

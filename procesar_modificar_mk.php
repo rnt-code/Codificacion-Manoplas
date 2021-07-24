@@ -1,8 +1,10 @@
 <?php
-    $id = $_GET["id"];
+    $idmk = $_POST["idmk"];
+    $mkcod = $_POST["mkcodigo"];
+    $mknom = $_POST["mknombre"];
     //echo"<br>ID=".$id;
 
-    $sql = "DELETE FROM tipo_prueba WHERE id_tp = $id;";
+    $sql = "UPDATE marca_kit SET mk_codigo='$mkcod', mk_nombre='$mknom' WHERE id_mk = $idmk";
     //echo"<br>Consulta=".$sql;
 
     include("conexion.php");
@@ -22,7 +24,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
-        <title>Eliminación</title>
+        <title>Modificación</title>
     </head>
     <body>
         <header id="header">
@@ -35,30 +37,30 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Eliminación</h5>
+                    <h5>Modificar Marca de Kit</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marca de kit</button></td>
                 </div>
             </div>
             <hr>
             <?php
                 if($res) {
                     //echo"<br>Eliminación exitosa";
-                    header("Refresh: 0; url=listar_tp.php");
+                    header("Refresh: 0; url=listar_mk.php");
                 }
                 else {
                     ?>
                     <div style="margin-left: 37px;">
-                    <p>¡Falló la eliminación!</p>
+                    <p>¡Falló la modificación!</p>
                     </div>
                     <?php
                     //echo"<br>Falló la eliminación";
-                    //header("Refresh: 6; url=listar_tp.php");
+                    //header("Refresh: 6; url=listar_mk.php");
                 }
             ?>
         </main>

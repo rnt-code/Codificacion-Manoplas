@@ -1,8 +1,9 @@
 <?php
     include("conexion.php");
-
-    $sql = "SELECT * FROM capacidad";
+    $id = $_GET["id"];
+    $sql = "SELECT * FROM destino WHERE id_des = $id";
     $res = mysqli_query($conexion, $sql);
+    $vec = mysqli_fetch_row($res);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,11 +17,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/list.css">
+        <link rel="stylesheet" href="css/alta.css">
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>Lista Capacidades</title>
+        <title>Modificar</title>
     </head>
     <body>
         <header id="header">
@@ -33,41 +35,44 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Capacidades disponibles</h5>
+                    <h5>Modificar Destino</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_cap.html'">Agregar capacidad</button></td>
-                </div>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.html'">Agregar destino</button></td>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button></td>
+                </div>              
             </div>
             <hr>
-            <div class="desplazar-tabla">
-                <table>
-                    <tr>
-                        <th>[ ID ]</th>
-                        <th>[ Código ]</th>
-                        <th>[ Tipo ]</th>
-                        <th colspan="2">[ Acciones ]</th>
-                    </tr>
-                    <?php
-                    while($vec = mysqli_fetch_array($res)) {
-                    ?>
-                    <tr>
-                        <td><?php echo $vec[0];?></td>
-                        <td><?php echo $vec[1];?></td>
-                        <td><?php echo $vec[2];?></td>
-                        <td><a href="form_modificar_cap.php?id=<?php echo $vec[0];?>">Modificar</a></td>
-                        <td><a href="procesar_eliminar_cap.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
-                    <?php		
-                    }
-                    ?>
-                    </tr>
-                </table>
-            </div>
-            
+            <section>
+            <header>
+                <h5 hidden>Modificar destino</h5>
+            </header>
+                <form method="post" action="procesar_modificar_des.php">
+                    <div class="desplazar-tabla">
+                        <table>
+                            <tr>
+                                <td><label for="iddes">ID: </label></td>
+                                <td><input class="readonly" type="text" name="iddes" id="iddes" value="<?php echo $id;?>" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><label for="descodigo">Código:</label></td>
+                                <td><input type="text" name="descodigo" id="descodigo" value="<?php echo $vec[1];?>" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="desnombre">Destino:</label></td>
+                                <td><input type="text" name="desnombre" id="desnombre" value="<?php echo $vec[2];?>"required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Gardar"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </section>
         </main>
         <footer>
             <label class="version"></label>

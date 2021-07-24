@@ -1,14 +1,12 @@
 <?php
-$idtp = $_POST["idtp"];
-$tpcod = $_POST["tpcodigo"];
-$tpnom = $_POST["tpnombre"];
-//echo"<br>ID=".$id;
+    $id = $_GET["id"];
+    //echo"<br>ID=".$id;
 
-$sql = "UPDATE tipo_prueba SET tp_codigo='$tpcod', tp_nombre='$tpnom' WHERE id_tp = $idtp";
-//echo"<br>Consulta=".$sql;
+    $sql = "DELETE FROM marca_kit WHERE id_fun = $id;";
+    //echo"<br>Consulta=".$sql;
 
-include("conexion.php");
-$res = mysqli_query($conexion, $sql);
+    include("conexion.php");
+    $res = mysqli_query($conexion, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,31 +35,31 @@ $res = mysqli_query($conexion, $sql);
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Modificar tipo de prueba</h5>
+                    <h5>Eliminación</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.html'">Agregar marca de kit</button></td>
                 </div>
             </div>
             <hr>
             <?php
-            if($res) {
-                //echo"<br>Eliminación exitosa";
-                header("Refresh: 0; url=listar_tp.php");
-            }
-            else {
-                ?>
-                <div style="margin-left: 37px;">
-                <p>¡Falló la eliminación!</p>
-                </div>
-                <?php
-                //echo"<br>Falló la eliminación";
-                //header("Refresh: 6; url=listar_tp.php");
-            }
+                if($res) {
+                    //echo"<br>Eliminación exitosa";
+                    header("Refresh: 0; url=listar_mk.php");
+                }
+                else {
+                    ?>
+                    <div style="margin-left: 37px;">
+                    <p>¡Falló la eliminación!</p>
+                    </div>
+                    <?php
+                    //echo"<br>Falló la eliminación";
+                    //header("Refresh: 6; url=listar_mk.php");
+                }
             ?>
         </main>
         <!-- Optional JavaScript; choose one of the two! -->

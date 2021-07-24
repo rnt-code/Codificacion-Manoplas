@@ -1,8 +1,10 @@
 <?php
-    $id = $_GET["id"];
+    $idcap = $_POST["idcap"];
+    $capcod = $_POST["capcodigo"];
+    $capnom = $_POST["capnombre"];
     //echo"<br>ID=".$id;
 
-    $sql = "DELETE FROM tipo_prueba WHERE id_tp = $id;";
+    $sql = "UPDATE capacidad SET cap_codigo='$capcod', cap_nombre='$capnom' WHERE id_cap = $idcap";
     //echo"<br>Consulta=".$sql;
 
     include("conexion.php");
@@ -22,7 +24,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
-        <title>Eliminación</title>
+        <title>Modificación</title>
     </head>
     <body>
         <header id="header">
@@ -35,30 +37,30 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Eliminación</h5>
+                    <h5>Modificar Capacidad</h5>
                 </header>
             </section>
             <hr>
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_cap.php'" role="button">Ver lista de capacidades</button></td>
                 </div>
             </div>
             <hr>
             <?php
                 if($res) {
                     //echo"<br>Eliminación exitosa";
-                    header("Refresh: 0; url=listar_tp.php");
+                    header("Refresh: 0; url=listar_cap.php");
                 }
                 else {
                     ?>
                     <div style="margin-left: 37px;">
-                    <p>¡Falló la eliminación!</p>
+                    <p>¡Falló la modificación!</p>
                     </div>
                     <?php
                     //echo"<br>Falló la eliminación";
-                    //header("Refresh: 6; url=listar_tp.php");
+                    //header("Refresh: 6; url=listar_cap.php");
                 }
             ?>
         </main>

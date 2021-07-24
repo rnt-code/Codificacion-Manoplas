@@ -2,7 +2,7 @@
     $id = $_GET["id"];
     //echo"<br>ID=".$id;
 
-    $sql = "DELETE FROM tipo_prueba WHERE id_tp = $id;";
+    $sql = "DELETE FROM capacidad WHERE id_cap = $id;";
     //echo"<br>Consulta=".$sql;
 
     include("conexion.php");
@@ -42,14 +42,14 @@
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_cap.html'">Agregar prueba</button></td>
                 </div>
             </div>
             <hr>
             <?php
                 if($res) {
                     //echo"<br>Eliminación exitosa";
-                    header("Refresh: 0; url=listar_tp.php");
+                    header("Refresh: 0; url=listar_cap.php");
                 }
                 else {
                     ?>
@@ -58,7 +58,7 @@
                     </div>
                     <?php
                     //echo"<br>Falló la eliminación";
-                    //header("Refresh: 6; url=listar_tp.php");
+                    //header("Refresh: 6; url=listar_cap.php");
                 }
             ?>
         </main>
