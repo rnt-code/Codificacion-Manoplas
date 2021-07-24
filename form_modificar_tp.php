@@ -18,7 +18,7 @@
 
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/alta.css">
-        <link rel="stylesheet" href="css/modificar.css">
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
@@ -52,7 +52,7 @@
                 <h5 hidden>Modificar prueba</h5>
             </header>
                 <form method="post" action="procesar_modificar_alta_tp.php">
-                    <div style="margin-left: 37px;">
+                    <div class="desplazar-tabla">
                         <table>
                             <tr>
                                 <td><label for="idtp">ID: </label></td>

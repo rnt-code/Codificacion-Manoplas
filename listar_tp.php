@@ -44,14 +44,13 @@
                 </div>
             </div>
             <hr>
-            <div style="margin-left: 37px;">
+            <div class="desplazar-tabla">
                 <table>
                     <tr>
                         <th>[ ID ]</th>
                         <th>[ Código ]</th>
                         <th>[ Tipo ]</th>
                         <th colspan="2">[ Acciones ]</th>
-                        
                     </tr>
                     <?php
                     while($vec = mysqli_fetch_array($res)) {
