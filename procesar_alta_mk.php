@@ -38,14 +38,14 @@
                     <h5>Agregar Marca de Kit</h5>
                 </header>
             </section>
-            <hr>
+            <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
                     <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marcas de kit</button></td>
                 </div>              
             </div>
-            <hr>
+            <hr class="hrcolor">
             <?php
                 $res = mysqli_query($conexion, $sql);
                 if($res) {

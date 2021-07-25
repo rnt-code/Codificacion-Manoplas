@@ -33,17 +33,17 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Tipos Tecnología disponibles</h5>
+                    <h5>Tecnología disponibles</h5>
                 </header>
             </section>
-            <hr>
+            <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
                     <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tec.html'">Agregar tecnología</button></td>
                 </div>
             </div>
-            <hr>
+            <hr class="hrcolor">
             <div class="desplazar-tabla">
                 <table>
                     <tr>

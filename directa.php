@@ -1,3 +1,21 @@
+<?php
+include("conexion.php");
+$sql1 = "SELECT * FROM tipo_prueba";
+$res1 = mysqli_query($conexion, $sql1);
+
+$sql2 = "SELECT * FROM marca_kit";
+$res2 = mysqli_query($conexion, $sql2);
+
+$sql3 = "SELECT * FROM tecnologia";
+$res3 = mysqli_query($conexion, $sql3);
+
+$sql5 = "SELECT * FROM destino";
+$res5 = mysqli_query($conexion, $sql5);
+
+$sql6 = "SELECT * FROM funcion";
+$res6 = mysqli_query($conexion, $sql6);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -40,9 +58,13 @@
                             <div class="mb-3">
                                 <label for="tipodeprueba" class="form-label">TIPO DE PRUEBA: </label>
                                 <select class="form-select" name="tipodeprueba" id="tipodeprueba">
-                                    <option class="opcion" selected>Seleccionar</option>
-                                    <option value="F">Funcional</option>
-                                    <option value="S">Seguridad Eléctrica</option>
+                                <?php
+                                while($vec1 = mysqli_fetch_row($res1)) {
+                                    ?>
+                                    <option value="<?php echo $vec1[1];?>"><?php echo $vec1[2];?></option>
+                                    <?php
+                                }
+                                ?>    
                                 </select>
                             </div>
                         </div>
@@ -50,11 +72,13 @@
                             <div class="mb-3">
                                 <label for="marcakit" class="form-label">MARCA DEL KIT: </label>
                                 <select class="form-select" name="marcakit" id="marcakit">
-                                    <option class="opcion" selected>Seleccionar</option>
-                                    <option value="HS">Hisense</option>
-                                    <option value="MD">Midea</option>
-                                    <option value="AX">Aux</option>
-                                    <option value="SM">Samsung</option>
+                                <?php
+                                while($vec2 = mysqli_fetch_row($res2)) {
+                                    ?>
+                                    <option value="<?php echo $vec2[1];?>"><?php echo $vec2[2];?></option>
+                                    <?php
+                                }
+                                ?> 
                                 </select>
                             </div>
                         </div>
@@ -62,9 +86,13 @@
                     <div class="mb-3">
                         <label for="tecnologia" class="form-label">TECNOLOGIA: </label>
                         <select class="form-select" name="tecnologia" id="tecnologia">
-                            <option class="opcion" selected>Seleccionar</option>
-                            <option value="IV">Inverter</option>
-                            <option value="ON">On/Off</option>
+                        <?php
+                        while($vec3 = mysqli_fetch_row($res3)) {
+                            ?>
+                            <option value="<?php echo $vec3[1];?>"><?php echo $vec3[2];?></option>
+                            <?php
+                        }
+                        ?> 
                         </select>
                     </div>
                     <label>CAPACIDADES: </label>
@@ -87,10 +115,13 @@
                             <div class="mb-3">
                                 <label for="destino" class="form-label">DESTINO: </label>
                                 <select class="form-select" name="destino" id="destino">
-                                    <option class="opcion" selected>Seleccionar</option>
-                                    <option value="FS">p/ Frío solo</option>
-                                    <option value="FC">p/Frío-Calor</option>
-                                    <option value="AM">Ambos</option>
+                                <?php
+                                while($vec5 = mysqli_fetch_row($res5)) {
+                                    ?>
+                                    <option value="<?php echo $vec5[1];?>"><?php echo $vec5[2];?></option>
+                                    <?php
+                                }
+                                ?>     
                                 </select>
                             </div>
                         </div>
@@ -99,9 +130,13 @@
                                 <div>
                                     <label for="funcion" class="form-label">FUNCION: </label>
                                     <select class="form-select" name="funcion" id="funcion">
-                                        <option class="opcion" selected>Seleccionar</option>
-                                        <option value="UE">Unidad Exterior</option>
-                                        <option value="UI">Unidad Interior</option>
+                                    <?php
+                                    while($vec6 = mysqli_fetch_row($res6)) {
+                                        ?>
+                                        <option value="<?php echo $vec6[1];?>"><?php echo $vec6[2];?></option>
+                                        <?php
+                                    }
+                                    ?>    
                                     </select>
                                 </div>
                             </div>
@@ -143,3 +178,31 @@
         -->
     </body>
 </html>
+
+
+<!--
+
+<option class="opcion" selected>Seleccionar</option>
+<option value="F">Funcional</option>
+<option value="S">Seguridad Eléctrica</option>
+
+<option class="opcion" selected>Seleccionar</option>
+<option value="HS">Hisense</option>
+<option value="MD">Midea</option>
+<option value="AX">Aux</option>
+<option value="SM">Samsung</option>
+
+<option class="opcion" selected>Seleccionar</option>
+<option value="IV">Inverter</option>
+<option value="ON">On/Off</option>
+
+<option class="opcion" selected>Seleccionar</option>
+<option value="FS">p/ Frío solo</option>
+<option value="FC">p/Frío-Calor</option>
+<option value="AM">Ambos</option>
+
+<option class="opcion" selected>Seleccionar</option>
+<option value="UE">Unidad Exterior</option>
+<option value="UI">Unidad Interior</option>
+
+-->

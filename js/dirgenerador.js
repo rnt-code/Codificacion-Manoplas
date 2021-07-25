@@ -1,6 +1,18 @@
 $(document).ready(function() {
 
-    console.log("La página cargó")
+    //console.log("La página cargó")
+
+    $("#tipodeprueba").val("");
+    $("#marcakit").val("");
+    $("#tecnologia").val("");
+    $("#destino").val("");
+    $("#funcion").val("");
+    $("#capacidad1").prop("checked", false);
+    $("#capacidad2").prop("checked", false);
+    $("#capacidad3").prop("checked", false);
+    $("#capacidad4").prop("checked", false);
+    $("#codigo").val("");
+
 
     $("#generar").click(function() {
         
@@ -20,7 +32,7 @@ $(document).ready(function() {
             $("#codigo").css("color", "red")
         }
         else {
-            if(tipop != "Seleccionar" && marcak != "Seleccionar" && tecno != "Seleccionar" && dest != "Seleccionar" && func != "Seleccionar") {
+            if(tipop != null && marcak != null && tecno != null && dest != null && func != null) {
                 var code = tipop + "" + marcak + "" + tecno + "" + capcod + "" + dest + "" + func;
                 $("#codigo").css("color", "green")
             }
@@ -30,15 +42,15 @@ $(document).ready(function() {
             }
         }
         $("#codigo").val(code);
-        console.log("Código = "+code);
+        //console.log("Código = "+code);
     });
 
     $("#borrar").click(function() {
-        $("#tipodeprueba").val("Seleccionar");
-        $("#marcakit").val("Seleccionar");
-        $("#tecnologia").val("Seleccionar");
-        $("#destino").val("Seleccionar");
-        $("#funcion").val("Seleccionar");
+        $("#tipodeprueba").val("");
+        $("#marcakit").val("");
+        $("#tecnologia").val("");
+        $("#destino").val("");
+        $("#funcion").val("");
         $("#capacidad1").prop("checked", false);
         $("#capacidad2").prop("checked", false);
         $("#capacidad3").prop("checked", false);

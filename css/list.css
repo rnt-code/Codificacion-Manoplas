@@ -9,4 +9,6 @@ td, th {
     padding: 5px;
 }
 
-tr:hover {background-color: #ececec;} 
+tr:hover {
+    background-color: #ececec;
+} 
