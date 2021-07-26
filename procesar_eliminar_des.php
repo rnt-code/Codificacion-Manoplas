@@ -57,8 +57,6 @@
                     <p>¡Falló la eliminación!</p>
                     </div>
                     <?php
-                    //echo"<br>Falló la eliminación";
-                    //header("Refresh: 6; url=listar_des.php");
                 }
             ?>
         </main>

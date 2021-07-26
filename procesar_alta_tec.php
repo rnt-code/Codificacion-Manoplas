@@ -58,8 +58,6 @@
                     <p>¡Falló la agregación!</p>
                     </div>
                     <?php
-                    //echo"<br>Falló la agregación";
-                    //header("Refresh: 3; url=listar_tp.php");
                 }
             ?>
         </main>

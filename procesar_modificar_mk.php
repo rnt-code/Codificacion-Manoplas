@@ -59,8 +59,6 @@
                     <p>¡Falló la modificación!</p>
                     </div>
                     <?php
-                    //echo"<br>Falló la eliminación";
-                    //header("Refresh: 6; url=listar_mk.php");
                 }
             ?>
         </main>

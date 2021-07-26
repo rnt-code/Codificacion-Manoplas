@@ -33,7 +33,7 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Tecnología disponibles</h5>
+                    <h5>Tecnologías disponibles</h5>
                 </header>
             </section>
             <hr class="hrcolor">

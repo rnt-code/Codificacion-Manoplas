@@ -155,7 +155,7 @@ $res6 = mysqli_query($conexion, $sql6);
                         <input class="form-control" type="text" id="codigo" readonly="readonly">
                         <p></p>
                         <button type="button" class="btn btn-primary" id="generar">Generar código</button>
-                        <button type="button" class="btn btn-secondary" id="borrar">Borrar</button>
+                        <button type="button" class="btn btn-secondary btn-sm" id="borrar">Borrar</button>
                     </div>
                 </form>
             </section>
