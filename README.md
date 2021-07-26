@@ -3,3 +3,28 @@ Calculadora de códigos para manoplas de AA, directa e inversa.
 
 Web-App para codificar manoplas (jigs/fixtures) con el objetivo de poder reconocer de forma rápida el tipo de prueba, modelo de AA y la marca de AA al que va dirigida.
 Incluye una calculadora inversa.
+
+Codificación de Manoplas - Especificación BSIP E.UOA1391
+
+v1.0 Lanzamiento
+21/04/2021
+
+v1.01 
+- Correcciones menores al documento index.html que no afectan a la funcionalidad. Ahora el código valida en el W3C HTML validator (https://validator.w3.org/)
+- Se quitaron los espacios en blanco al archivo jpg del logo de BGH.
+21/04/2021
+
+v2.0.0
+- Se escribe el código para la calculadora inversa
+29/04/2021
+
+v2.1.0
+- Se agregaron rutinas de error para la calculadora inversa
+- Se agregó la imagen de la Referencia Rápida en el index
+03/05/2021
+
+v2.2.0
+- Se actualizó la Especificación, se agregó la marca Samsung.
+21/07/2021
+
+--Ramón Taboada
