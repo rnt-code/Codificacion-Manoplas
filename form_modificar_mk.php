@@ -67,7 +67,7 @@
                                 <td><input type="text" name="mknombre" id="mknombre" value="<?php echo $vec[2];?>"required></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><input type="submit" value="Gardar"></td>
+                                <td colspan="2"><input type="submit" value="Guardar"></td>
                             </tr>
                         </table>
                     </div>
