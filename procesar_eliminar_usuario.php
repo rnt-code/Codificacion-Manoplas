@@ -6,7 +6,7 @@
     //echo"<br>Consulta=".$sql;
 
     include("conuser.php");
-    $res = mysqli_query($conexion, $sql);
+    $res = mysqli_query($conuser, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -2,7 +2,7 @@
     include("conuser.php");
 
     $sql = "SELECT * FROM usuario";
-    $res = mysqli_query($conexion, $sql);
+    $res = mysqli_query($conuser, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="es">

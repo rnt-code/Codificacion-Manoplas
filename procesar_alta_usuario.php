@@ -2,9 +2,22 @@
     $nomusr = $_POST["nombreusuario"];
     $passusr = $_POST["passusuario"];
 
-    $sql = "INSERT INTO usuario (user_name, user_pass) VALUES ('$nomusr', '$passusr')";
-    //echo"<br>Consulta: ".$sql;
     include("conuser.php");
+    $sql1 = "SELECT * FROM usuario";
+    $res1 = mysqli_query($conuser, $sql1);
+    
+    $cont = 0;
+    while($vec = mysqli_fetch_row($res1)) {
+        if($vec[1] == $nomusr || $vec[2] == $passusr) {
+            $cont++;
+        }
+    }
+
+    if($cont == 0) {
+
+    $sql2 = "INSERT INTO usuario (user_name, user_pass) VALUES ('$nomusr', '$passusr')";
+    //echo"<br>Consulta: ".$sql;
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,8 +60,8 @@
             </div>
             <hr class="hrcolor">
             <?php
-                $res = mysqli_query($conexion, $sql);
-                if($res) {
+                $res2 = mysqli_query($conuser, $sql2);
+                if($res2) {
                     //echo"<br>Agregado exitoso";
                     header("Location: listar_usuario.php");
                 }
@@ -76,3 +89,10 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+    echo"<br>El usuario y/o contraseña ya existen";
+    header("Refresh: 4, url=form_alta_usuario.html");
+}
+?>
