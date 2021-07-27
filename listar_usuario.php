@@ -1,9 +1,8 @@
 <?php
-    include("conexion.php");
-    $id = $_GET["id"];
-    $sql = "SELECT * FROM tipo_prueba WHERE id_tp = $id";
+    include("conuser.php");
+
+    $sql = "SELECT * FROM usuario";
     $res = mysqli_query($conexion, $sql);
-    $vec = mysqli_fetch_row($res);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,12 +16,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/alta.css">
-
+        <link rel="stylesheet" href="css/list.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>Modificar</title>
+        <title>Lista Capacidades</title>
     </head>
     <body>
         <header id="header">
@@ -35,44 +33,46 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Modificar Tipo de Prueba</h5>
+                    <h5>Lista de Usuarios</h5>
                 </header>
             </section>
             <hr class="hrcolor">
             <div class="botones">
-                <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
-                </div>              
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.html'">Menú Usuarios</button>
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.html'">Alta usuario</button>
+                    </div>
+                </div>
             </div>
             <hr class="hrcolor">
-            <section>
-            <header>
-                <h5 hidden>Modificar prueba</h5>
-            </header>
-                <form method="post" action="procesar_modificar_tp.php">
-                    <div class="desplazar-tabla">
-                        <table>
-                            <tr>
-                                <td><label for="idtp">ID: </label></td>
-                                <td><input class="readonly" type="text" name="idtp" id="idtp" value="<?php echo $id;?>" readonly></td>
-                            </tr>
-                            <tr>
-                                <td><label for="tpcodigo">Código:</label></td>
-                                <td><input type="text" name="tpcodigo" id="tpcodigo" value="<?php echo $vec[1];?>" required></td>
-                            </tr>
-                            <tr>
-                                <td><label for="tpnombre">Tipo de prueba:</label></td>
-                                <td><input type="text" name="tpnombre" id="tpnombre" value="<?php echo $vec[2];?>" required></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input type="submit" value="Guardar"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </form>
-            </section>
+            <div class="desplazar-tabla">
+                <table>
+                    <tr>
+                        <th>[ ID ]</th>
+                        <th>[ Nombre ]</th>
+                        <th>[ Pass ]</th>
+                        <th colspan="2">[ Acciones ]</th>
+                    </tr>
+                    <?php
+                    while($vec = mysqli_fetch_array($res)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $vec[0];?></td>
+                        <td><?php echo $vec[1];?></td>
+                        <td><?php echo $vec[2];?></td>
+                        <td><a href="form_modificar_usuario.php?id=<?php echo $vec[0];?>">Modificar</a></td>
+                        <td><a href="procesar_eliminar_usuario.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
+                    <?php		
+                    }
+                    ?>
+                    </tr>
+                </table>
+            </div>
+            
         </main>
         <footer>
             <label class="version"></label>

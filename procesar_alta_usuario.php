@@ -1,9 +1,10 @@
 <?php
-    include("conexion.php");
-    $id = $_GET["id"];
-    $sql = "SELECT * FROM tipo_prueba WHERE id_tp = $id";
-    $res = mysqli_query($conexion, $sql);
-    $vec = mysqli_fetch_row($res);
+    $nomusr = $_POST["nombreusuario"];
+    $passusr = $_POST["passusuario"];
+
+    $sql = "INSERT INTO usuario (user_name, user_pass) VALUES ('$nomusr', '$passusr')";
+    //echo"<br>Consulta: ".$sql;
+    include("conuser.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,11 +19,10 @@
 
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/alta.css">
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
 
-        <title>Modificar</title>
+        <title>Registrar</title>
     </head>
     <body>
         <header id="header">
@@ -35,44 +35,31 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Modificar Tipo de Prueba</h5>
+                    <h5>Agregar Tipo de Prueba</h5>
                 </header>
             </section>
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
                     <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
                     <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
                 </div>              
             </div>
             <hr class="hrcolor">
-            <section>
-            <header>
-                <h5 hidden>Modificar prueba</h5>
-            </header>
-                <form method="post" action="procesar_modificar_tp.php">
-                    <div class="desplazar-tabla">
-                        <table>
-                            <tr>
-                                <td><label for="idtp">ID: </label></td>
-                                <td><input class="readonly" type="text" name="idtp" id="idtp" value="<?php echo $id;?>" readonly></td>
-                            </tr>
-                            <tr>
-                                <td><label for="tpcodigo">Código:</label></td>
-                                <td><input type="text" name="tpcodigo" id="tpcodigo" value="<?php echo $vec[1];?>" required></td>
-                            </tr>
-                            <tr>
-                                <td><label for="tpnombre">Tipo de prueba:</label></td>
-                                <td><input type="text" name="tpnombre" id="tpnombre" value="<?php echo $vec[2];?>" required></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input type="submit" value="Guardar"></td>
-                            </tr>
-                        </table>
+            <?php
+                $res = mysqli_query($conexion, $sql);
+                if($res) {
+                    //echo"<br>Agregado exitoso";
+                    header("Location: listar_usuario.php");
+                }
+                else {
+                    ?>
+                    <div style="margin-left: 37px;">
+                    <p>¡Falló el alta!</p>
                     </div>
-                </form>
-            </section>
+                    <?php
+                }
+            ?>
         </main>
         <footer>
             <label class="version"></label>
