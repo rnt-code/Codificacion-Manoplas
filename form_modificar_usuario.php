@@ -2,7 +2,7 @@
     include("conuser.php");
     $id = $_GET["id"];
     $sql = "SELECT * FROM usuario WHERE user_id = $id";
-    $res = mysqli_query($conexion, $sql);
+    $res = mysqli_query($conuser, $sql);
     $vec = mysqli_fetch_row($res);
 ?>
 <!DOCTYPE html>
