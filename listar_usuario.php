@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.html'">Alta usuario</button>
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.php'">Alta usuario</button>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                         <th>[ ID ]</th>
                         <th>[ Nombre ]</th>
                         <th>[ Pass ]</th>
-                        <th colspan="2">[ Acciones ]</th>
+                        <th colspan="2">[ Acción ]</th>
                     </tr>
                     <?php
                     while($vec = mysqli_fetch_array($res)) {
@@ -64,7 +64,6 @@
                         <td><?php echo $vec[0];?></td>
                         <td><?php echo $vec[1];?></td>
                         <td><?php echo $vec[2];?></td>
-                        <td><a href="form_modificar_usuario.php?id=<?php echo $vec[0];?>">Modificar</a></td>
                         <td><a href="procesar_eliminar_usuario.php?id=<?php echo $vec[0];?>">Eliminar</a></td>
                     <?php		
                     }

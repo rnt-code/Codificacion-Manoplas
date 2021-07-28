@@ -64,6 +64,22 @@
                     </div>
                 </form>
             </section>
+            <section>
+                <header><h5 hidden>Usuario equivocado</h5></header>
+                <?php
+                if(isset($_GET["error_id"])) {
+                    $error = $_GET["error_id"];
+                    if($error == "user_error") {
+                        ?>
+                        <div style="margin-left: 37px;">
+                        <br>
+                        <p>¡Este usuario ya existe, cambiar por otro!</p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </section>
         </main>
         <footer>
             <label class="version"></label>

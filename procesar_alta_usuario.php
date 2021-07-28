@@ -1,6 +1,6 @@
 <?php
-    $nomusr = $_POST["nombreusuario"];
-    $passusr = $_POST["passusuario"];
+    $usnom = $_POST["nombreusuario"];
+    $uspass = $_POST["passusuario"];
 
     include("conuser.php");
     $sql1 = "SELECT * FROM usuario";
@@ -8,15 +8,15 @@
     
     $cont = 0;
     while($vec = mysqli_fetch_row($res1)) {
-        if($vec[1] == $nomusr || $vec[2] == $passusr) {
+        if($vec[1] == $usnom) {
             $cont++;
         }
     }
 
     if($cont == 0) {
 
-    $sql2 = "INSERT INTO usuario (user_name, user_pass) VALUES ('$nomusr', '$passusr')";
-    //echo"<br>Consulta: ".$sql;
+    $sql2 = "INSERT INTO usuario (user_name, user_pass) VALUES ('$usnom', '$uspass')";
+    //echo"<br>Consulta: ".$sql2;
 
 ?>
 <!DOCTYPE html>
@@ -92,7 +92,6 @@
 <?php
 }
 else {
-    echo"<br>El usuario y/o contraseña ya existen";
-    header("Refresh: 4, url=form_alta_usuario.html");
+    header ("Location: form_alta_usuario.php?error_id=user_error");
 }
 ?>
