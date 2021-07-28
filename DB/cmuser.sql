@@ -38,7 +38,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`user_id`, `user_name`, `user_pass`) VALUES
-(3, 'admin', '1234');
+(1, 'admin', 'Rumi78cami05');
 
 --
 -- Índices para tablas volcadas
@@ -58,7 +58,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
