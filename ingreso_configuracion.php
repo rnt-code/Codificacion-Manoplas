@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(!isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +38,7 @@
                 <header>
                     <h5 hidden>Ingreso Configuración</h5>
                 </header>
-                <form method="post" action="verificar_user_config.php">
+                <form method="post" action="startsession.php">
                     <div class="desplazar-tabla">
                         <table>
                             <tr>
@@ -84,3 +88,9 @@
         -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: menu_configuracion.php");
+}
+?>

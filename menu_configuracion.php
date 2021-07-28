@@ -37,7 +37,7 @@ if(isset($_SESSION["verified_user"])) {
             <div class="botones">
                 <div class="d-flex bd-highlight mb-3">
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='index.html'">Salir de Configuración</button>
+                        <button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='endsession.php'">Salir de Configuración</button>
                     </div>
                     <div class="ms-auto p-2 bd-highlight">
                         <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='menu_usuario.php'">Menú usuarios</button>

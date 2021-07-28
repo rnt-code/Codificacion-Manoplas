@@ -43,11 +43,17 @@ if(isset($_SESSION["verified_user"])) {
             </section>
             <hr class="hrcolor">
             <div class="botones">
-                <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
-                    <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tec.php'">Agregar tecnología</button>
-                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tec.php'" role="button">Ver lista de tecnologías</button>
-                </div>              
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tec.php'">Agregar tecnología</button>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tec.php'" role="button">Ver lista de tecnologías</button>
+                    </div>   
+                </div>           
             </div>
             <hr class="hrcolor">
             <section>

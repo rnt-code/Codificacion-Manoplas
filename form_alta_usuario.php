@@ -77,7 +77,7 @@ if(isset($_SESSION["verified_user"])) {
                         ?>
                         <div style="margin-left: 37px;">
                         <br>
-                        <p>¡Este usuario ya existe, cambiar por otro!</p>
+                        <p>¡Este usuario ya existe!</p>
                         </div>
                         <?php
                     }

@@ -41,13 +41,19 @@ if(isset($_SESSION["verified_user"])) {
                     <h5>Modificar Marca de Kit</h5>
                 </header>
             </section>
-            <hr class="hrcolor">>
+            <hr class="hrcolor">
             <div class="botones">
-                <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
-                    <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.php'">Agregar marca de kit</button>
-                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marcas de kit</button>
-                </div>              
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.php'">Agregar marca de kit</button>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marcas de kit</button>
+                    </div> 
+                </div>             
             </div>
             <hr class="hrcolor">
             <section>

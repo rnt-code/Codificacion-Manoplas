@@ -45,9 +45,13 @@ if(isset($_SESSION["verified_user"])) {
             </section>
             <hr class="hrcolor">
             <div class="botones">
-                <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
-                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button>
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button>
+                    </div>
                 </div>
             </div>
             <hr class="hrcolor">
