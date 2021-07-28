@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     $id = $_GET["id"];
     //echo"<br>ID=".$id;
 
@@ -42,11 +45,10 @@
             <div class="botones">
                 <div class="d-flex bd-highlight mb-3">
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.html'">Ménu Usuarios</button>
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.php'">Ménu Usuarios</button>
                     </div>
-
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.html'">Alta usuario</button>
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.php'">Alta usuario</button>
                     </div>
                 </div>
             </div>
@@ -77,3 +79,9 @@
         -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

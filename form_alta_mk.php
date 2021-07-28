@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -27,31 +31,31 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Agregar Tecnología</h5>
+                    <h5>Agregar Marca de Kit</h5>
                 </header>
             </section>
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tec.php'" role="button">Ver lista de tecnologías</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista marcas de kit</button></td>
                 </div>              
             </div>
             <hr class="hrcolor">
             <section>
             <header>
-                <h5 hidden>Agregar Tecnología</h5>
+                <h5 hidden>Agregar Marca de Kit</h5>
             </header>
-                <form method="post" action="procesar_alta_tec.php">
+                <form method="post" action="procesar_alta_mk.php">
                     <div class="desplazar-tabla">
                         <table>
                             <tr>
-                                <td><label for="tpcodigo">Código:</label></td>
-                                <td><input type="text" name="teccodigo" id="teccodigo" required></td>
+                                <td><label for="mkcodigo">Código:</label></td>
+                                <td><input type="text" name="mkcodigo" id="mkcodigo" required></td>
                             </tr>
                             <tr>
-                                <td><label for="tecnombre">Tecnología:</label></td>
-                                <td><input type="text" name="tecnombre" id="tecnombre" required></td>
+                                <td><label for="mknombre">Marca de kit:</label></td>
+                                <td><input type="text" name="mknombre" id="mknombre" required></td>
                             </tr>
                             <tr>
                                 <td colspan="2"><input type="submit" value="Guardar"></td>
@@ -76,3 +80,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

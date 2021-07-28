@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     include("conuser.php");
 
     $sql = "SELECT * FROM usuario";
@@ -40,9 +43,8 @@
             <div class="botones">
                 <div class="d-flex bd-highlight mb-3">
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.html'">Menú Usuarios</button>
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.php'">Menú Usuarios</button>
                     </div>
-
                     <div class="p-2 bd-highlight">
                         <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_usuario.php'">Alta usuario</button>
                     </div>
@@ -88,3 +90,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

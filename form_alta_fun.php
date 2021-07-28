@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -33,7 +37,7 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
                     <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_fun.php'" role="button">Ver lista de funciones</button></td>
                 </div>              
             </div>
@@ -76,3 +80,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

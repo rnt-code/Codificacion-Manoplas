@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -27,31 +31,30 @@
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Agregar Destino</h5>
-                </header>
+                    <h5>Agregar Tipo de Prueba
             </section>
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
                 </div>              
             </div>
             <hr class="hrcolor">
             <section>
             <header>
-                <h5 hidden>Agregar Destino</h5>
+                <h5 hidden>Agregar Tipo de Prueba</h5>
             </header>
-                <form method="post" action="procesar_alta_des.php">
+                <form method="post" action="procesar_alta_tp.php">
                     <div class="desplazar-tabla">
                         <table>
                             <tr>
-                                <td><label for="descodigo">Código:</label></td>
-                                <td><input type="text" name="descodigo" id="descodigo" required></td>
+                                <td><label for="tpcodigo">Código:</label></td>
+                                <td><input type="text" name="tpcodigo" id="tpcodigo" required></td>
                             </tr>
                             <tr>
-                                <td><label for="desnombre">Destino:</label></td>
-                                <td><input type="text" name="desnombre" id="desnombre" required></td>
+                                <td><label for="tpnombre">Tipo de prueba:</label></td>
+                                <td><input type="text" name="tpnombre" id="tpnombre" required></td>
                             </tr>
                             <tr>
                                 <td colspan="2"><input type="submit" value="Guardar"></td>
@@ -76,3 +79,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

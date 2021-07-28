@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     include("conexion.php");
     $id = $_GET["id"];
     $sql = "SELECT * FROM destino WHERE id_des = $id";
@@ -41,9 +44,9 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.html'">Agregar destino</button></td>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.php'">Agregar destino</button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_des.php'" role="button">Ver lista de destinos</button>
                 </div>              
             </div>
             <hr class="hrcolor">
@@ -89,3 +92,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

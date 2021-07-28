@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -34,7 +38,7 @@
             <div class="botones">
                 <div class="d-flex bd-highlight mb-3">
                     <div class="p-2 bd-highlight">
-                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.html'">Menú Usuarios</button>
+                        <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_usuario.php'">Menú Usuarios</button>
                     </div>
                     <div class="p-2 bd-highlight">
                         <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_usuario.php'">Listar usuarios</button>
@@ -46,23 +50,23 @@
             <header>
                 <h5 hidden>Agregar Capacidad</h5>
             </header>
-                <form method="post" action="procesar_alta_usuario.php">
-                    <div class="desplazar-tabla">
-                        <table>
-                            <tr>
-                                <td><label for="nombreusuario">User name:</label></td>
-                                <td><input type="text" name="nombreusuario" id="nombreusuario" required></td>
-                            </tr>
-                            <tr>
-                                <td><label for="passusuario">User pass:</label></td>
-                                <td><input type="text" name="passusuario" id="passusuario" required></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input type="submit" value="Guardar"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </form>
+            <form method="post" action="procesar_alta_usuario.php">
+                <div class="desplazar-tabla">
+                    <table>
+                        <tr>
+                            <td><label for="nombreusuario">User name:</label></td>
+                            <td><input type="text" name="nombreusuario" id="nombreusuario" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="passusuario">User pass:</label></td>
+                            <td><input type="text" name="passusuario" id="passusuario" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Guardar"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
             </section>
             <section>
                 <header><h5 hidden>Usuario equivocado</h5></header>
@@ -96,3 +100,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     include("conexion.php");
     $id = $_GET["id"];
     $sql = "SELECT * FROM tipo_prueba WHERE id_tp = $id";
@@ -41,9 +44,9 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar prueba</button></td>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.php'">Agregar prueba</button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista de pruebas</button>
                 </div>              
             </div>
             <hr class="hrcolor">
@@ -89,3 +92,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

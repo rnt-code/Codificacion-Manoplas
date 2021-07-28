@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     $idmk = $_POST["idmk"];
     $mkcod = $_POST["mkcodigo"];
     $mknom = $_POST["mknombre"];
@@ -43,8 +46,8 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marca de kit</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_mk.php'" role="button">Ver lista de marca de kit</button>
                 </div>
             </div>
             <hr class="hrcolor">
@@ -74,3 +77,9 @@
         -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

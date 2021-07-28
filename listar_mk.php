@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     include("conexion.php");
 
     $sql = "SELECT * FROM marca_kit";
@@ -39,8 +42,8 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.html'">Agregar marca de kit</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.php'">Agregar marca de kit</button></td>
                 </div>
             </div>
             <hr class="hrcolor">
@@ -84,3 +87,9 @@
             -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

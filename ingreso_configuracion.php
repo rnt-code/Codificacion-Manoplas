@@ -1,16 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION["verified_user"])) {
-
-    $id = $_GET["id"];
-    //echo"<br>ID=".$id;
-
-    $sql = "DELETE FROM destino WHERE id_des = $id;";
-    //echo"<br>Consulta=".$sql;
-
-    include("conexion.php");
-    $res = mysqli_query($conexion, $sql);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,9 +10,10 @@ if(isset($_SESSION["verified_user"])) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/alta.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/version.js"></script>
-        <title>Eliminación</title>
+        <title>Ingreso</title>
     </head>
     <body>
         <header id="header">
@@ -38,30 +26,51 @@ if(isset($_SESSION["verified_user"])) {
             </header>
             <section>
                 <header class="subtitulo">
-                    <h5>Eliminación</h5>
+                    <h5>Ingreso Configuración</h5>
                 </header>
             </section>
-            <hr class="hrcolor">
-            <div class="botones">
-                <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.php'">Agregar destino</button></td>
-                </div>
-            </div>
-            <hr class="hrcolor">
-            <?php
-                if($res) {
-                    //echo"<br>Eliminación exitosa";
-                    header("Refresh: 0; url=listar_des.php");
-                }
-                else {
-                    ?>
-                    <div style="margin-left: 37px;">
-                    <p>¡Falló la eliminación!</p>
+            <hr>
+            <section>
+                <header>
+                    <h5 hidden>Ingreso Configuración</h5>
+                </header>
+                <form method="post" action="verificar_user_config.php">
+                    <div class="desplazar-tabla">
+                        <table>
+                            <tr>
+                                <td><label for="nombreusuario">Usuario:</label></td>
+                                <td><input type="text" name="nombreusuario" id="nombreusuario" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="passusuario">Contraseña:</label></td>
+                                <td><input type="password" name="passusuario" id="passusuario" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Enviar"></td>
+                            </tr>
+                        </table>
                     </div>
-                    <?php
+                </form>
+                <p></p>
+            </section>
+            <hr>
+            <section>
+            <header>
+                <h5 hidden>Usuario equivocado</h5>
+            </header>
+                <?php
+                if(isset($_GET["error_id"])) {
+                    $error = $_GET["error_id"];
+                    if($error == "user_credential_fail") {
+                        ?>
+                        <div style="margin-left: 37px;">
+                        <p>¡Usuario no registrado!</p>
+                        </div>
+                        <?php
+                    }
                 }
-            ?>
+                ?>
+            </section>
         </main>
         <!-- Optional JavaScript; choose one of the two! -->
 
@@ -75,9 +84,3 @@ if(isset($_SESSION["verified_user"])) {
         -->
     </body>
 </html>
-<?php
-}
-else {
-	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
-}
-?>

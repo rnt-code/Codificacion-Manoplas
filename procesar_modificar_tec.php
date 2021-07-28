@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+
     $idtec = $_POST["idtec"];
     $teccod = $_POST["teccodigo"];
     $tecnom = $_POST["tecnombre"];
@@ -43,8 +46,8 @@
             <hr class="hrcolor">
             <div class="botones">
                 <div class="p-2 bd-highlight">
-                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.html'">Menú Configuración</button>
-                    <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tec.php'" role="button">Ver lista de tecnologías</button></td>
+                    <button class="btn btn-outline-warning btn-sm" type="button" onclick="location.href='menu_configuracion.php'">Menú Configuración</button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tec.php'" role="button">Ver lista de tecnologías</button>
                 </div>
             </div>
             <hr class="hrcolor">
@@ -74,3 +77,9 @@
         -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>

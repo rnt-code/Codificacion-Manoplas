@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["verified_user"])) {
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +40,7 @@
                         <button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='index.html'">Salir de Configuración</button>
                     </div>
                     <div class="ms-auto p-2 bd-highlight">
-                        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='menu_usuario.html'">Menú usuarios</button>
+                        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='menu_usuario.php'">Menú usuarios</button>
                     </div>
                 </div>
             </div>
@@ -49,32 +53,32 @@
                     <table>
                         <tr>
                             <td class="param">Tipo de prueba:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tp.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" onclick="location.href='listar_tp.php'" role="button">Ver lista</button></td>
                         </tr>
                         <tr>
                             <td class="param">Marca de kit:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_mk.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_mk.php'">Ver lista</button></td>
                         </tr>
                         <tr>
                             <td class="param">Tecnología:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tec.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_tec.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_tec.php'">Ver lista</button></td>
                         </tr>
                         <tr>
                             <td class="param">Capacidades:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_cap.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_cap.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_cap.php'">Ver lista</button></td>
                         </tr>
                         <tr>
                             <td class="param">Destino:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_des.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_des.php'">Ver lista</button></td>
                         </tr>
                         <tr>
                             <td class="param">Función:</td>
-                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_fun.html'">Agregar</button></td>
+                            <td><button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='form_alta_fun.php'">Agregar</button></td>
                             <td><button class="btn btn-outline-secondary btn-sm" type="button" onclick="location.href='listar_fun.php'">Ver lista</button></td>
                         </tr>   
                     </table>
@@ -94,3 +98,9 @@
         -->
     </body>
 </html>
+<?php
+}
+else {
+	header("Location: ingreso_configuracion.php?error_id=user_credential_fail");
+}
+?>
