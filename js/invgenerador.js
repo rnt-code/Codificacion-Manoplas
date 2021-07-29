@@ -1,15 +1,8 @@
 $(document).ready(function() {
     
-    $("#itipodeprueba").val("");
-    $("#imarcadekit").val("");
-    $("#itecnologia").val("");
-    $("#idestino").val("");
-    $("#ifuncion").val("");
-    $("#icapacidades").val("");
-    $("#codingresado").css("color", "green")
-    $("#codingresado").val("");
-    $("#codingresado").focus();
-    $("#codingresado").focus();
+    $("#staticBackdrop2").on('shown.bs.modal', function(){
+        $(this).find('#codingresado').focus();
+    });
 
     $("#leer").click(function() {
 

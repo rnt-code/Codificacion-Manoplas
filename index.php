@@ -191,8 +191,8 @@
                             <!--Fin Botones-->  
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Understood</button>
+                            <!--<button type="button" class="btn btn-outline-primary">Copiar</button>-->
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                       </div>
                     </div>
@@ -264,8 +264,8 @@
                         <!--Fin formulario de la calculadora-->
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
+                            <!--<button type="button" class="btn btn-outline-primary">Pegar</button>-->
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                         </div>
                     </div>
