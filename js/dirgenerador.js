@@ -1,69 +1,77 @@
 $(document).ready(function() {
 
-    //console.log("La página cargó")
+    console.log("La página cargó")
 
-    $("#tipodeprueba").val("");
-    $("#marcakit").val("");
-    $("#tecnologia").val("");
-    $("#destino").val("");
-    $("#funcion").val("");
-    $("#capacidad1").prop("checked", false);
-    $("#capacidad2").prop("checked", false);
-    $("#capacidad3").prop("checked", false);
-    $("#capacidad4").prop("checked", false);
+    $("#dtipodeprueba").val("");
+    $("#dmarcakit").val("");
+    $("#dtecnologia").val("");
+    $("#ddestino").val("");
+    $("#dfuncion").val("");
+    $("#dcapacidad1").prop("checked", false);
+    $("#dcapacidad2").prop("checked", false);
+    $("#dcapacidad3").prop("checked", false);
+    $("#dcapacidad4").prop("checked", false);
     $("#codigo").val("");
 
 
     $("#generar").click(function() {
         
-        var tipop = $("#tipodeprueba").val();
-        var marcak = $("#marcakit").val();
-        var tecno = $("#tecnologia").val();
-        var capac1 = $("#capacidad1").prop("checked");
-        var capac2 = $("#capacidad2").prop("checked");
-        var capac3 = $("#capacidad3").prop("checked");
-        var capac4 = $("#capacidad4").prop("checked");
-        var dest = $("#destino").val();
-        var func = $("#funcion").val();
-        var capcod = capacidad(capac1, capac2, capac3, capac4);
+        let dtipop = $("#dtipodeprueba").val();
+        let dmarcak = $("#dmarcakit").val();
+        let dtecno = $("#dtecnologia").val();
+        let dcapac1 = $("#dcapacidad1").prop("checked");
+        let dcapac2 = $("#dcapacidad2").prop("checked");
+        let dcapac3 = $("#dcapacidad3").prop("checked");
+        let dcapac4 = $("#dcapacidad4").prop("checked");
+        let ddest = $("#ddestino").val();
+        let dfunc = $("#dfuncion").val();
+        let dcapcod = dcapacidad(dcapac1, dcapac2, dcapac3, dcapac4);
         
-        if(capac1 == false && capac2 == false && capac3 == false && capac4 == false) {
-            code = "Faltan datos"
+        console.log(dcapcod);
+        console.log(dcapac1);
+        console.log(dcapac2);
+        console.log(dcapac3);
+        console.log(dcapac4);
+
+        
+        if(dcapac1 == false && dcapac2 == false && dcapac3 == false && dcapac4 == false) {
+            dcode = "Faltan datos"
             $("#codigo").css("color", "red")
         }
         else {
-            if(tipop != null && marcak != null && tecno != null && dest != null && func != null) {
-                var code = tipop + "" + marcak + "" + tecno + "" + capcod + "" + dest + "" + func;
+            if(dtipop != null && dmarcak != null && dtecno != null && ddest != null && dfunc != null) {
+                var dcode = dtipop + "" + dmarcak + "" + dtecno + "" + dcapcod + "" + ddest + "" + dfunc;
                 $("#codigo").css("color", "green")
             }
             else {
-                code = "Faltan datos"
+                dcode = "Faltan datos"
                 $("#codigo").css("color", "red")
             }
         }
-        $("#codigo").val(code);
-        //console.log("Código = "+code);
+        $("#codigo").val(dcode);
+        console.log("Código = "+dcode);
     });
 
     $("#borrar").click(function() {
-        $("#tipodeprueba").val("");
-        $("#marcakit").val("");
-        $("#tecnologia").val("");
-        $("#destino").val("");
-        $("#funcion").val("");
-        $("#capacidad1").prop("checked", false);
-        $("#capacidad2").prop("checked", false);
-        $("#capacidad3").prop("checked", false);
-        $("#capacidad4").prop("checked", false);
+        $("#dtipodeprueba").val("");
+        $("#dmarcakit").val("");
+        $("#dtecnologia").val("");
+        $("#ddestino").val("");
+        $("#dfuncion").val("");
+        $("#dcapacidad1").prop("checked", false);
+        $("#dcapacidad2").prop("checked", false);
+        $("#dcapacidad3").prop("checked", false);
+        $("#dcapacidad4").prop("checked", false);
         $("#codigo").val("");
     });
 })
 
-function capacidad(capac1, capac2, capac3, capac4) {
+function dcapacidad(dcapac1, dcapac2, dcapac3, dcapac4) {
     
-    var decimal = Number(capac4)*Math.pow(2,3) + Number(capac3)*Math.pow(2,2) + Number(capac2)*Math.pow(2,1) + Number(capac1)*Math.pow(2,0);
+    let ddecimal = Number(dcapac4)*Math.pow(2,3) + Number(dcapac3)*Math.pow(2,2) + Number(dcapac2)*Math.pow(2,1) + Number(dcapac1)*Math.pow(2,0);
+    console.log(ddecimal);
 
-    switch(decimal) {
+    switch(ddecimal) {
 
         case 1:
             return "C00";
@@ -112,3 +120,4 @@ function capacidad(capac1, capac2, capac3, capac4) {
         break;
     }
 }
+

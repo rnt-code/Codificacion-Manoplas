@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log("La página cargó")
     
     $("#codigo").focus();
-
+/*
     $(document).keydown(function(e) {
         if(e.keyCode == 13) {
             console.log(e);
@@ -11,20 +11,20 @@ $(document).ready(function() {
             return false;
         }
     });
+*/
+    $("#codigo").click(function() {
 
-    $("#leercodigo").click(function() {
-
-        var code = $("#codigo").val();
-        var longitud = code.length;
+        var icode = $("#codigo").val();
+        var longitud = icode.length;
         //console.log(longitud);
         if(longitud == 12) {
-            code = code.toUpperCase();
-            var tipop = code.slice(0,1);
-            var marcak = code.slice(1,3);
-            var tecno = code.slice(3,5);
-            var capac = code.slice(5,8);
-            var dest = code.slice(8,10);
-            var func = code.slice(10);
+            icode = icode.toUpperCase();
+            var tipop = icode.slice(0,1);
+            var marcak = icode.slice(1,3);
+            var tecno = icode.slice(3,5);
+            var capac = icode.slice(5,8);
+            var dest = icode.slice(8,10);
+            var func = icode.slice(10);
             //--------------------------------
             if(tipoprueba(tipop) == "ERR" || marcakit(marcak) == "ERR" || tecnologia(tecno) == "ERR" || capacidad(capac) == "ERR" || destino(dest) == "ERR" || funcion(func) == "ERR") {
                 $("#codigo").css("color", "red");
@@ -34,52 +34,52 @@ $(document).ready(function() {
             }
             //--------------------------------
             if(tipoprueba(tipop) == "ERR") {
-                $("#tipodeprueba").css("color", "red");
+                $("#itipodeprueba").css("color", "red");
             }
             else {
-                $("#tipodeprueba").css("color", "black");
+                $("#itipodeprueba").css("color", "black");
             }
-            $("#tipodeprueba").val(tipoprueba(tipop));
+            $("#itipodeprueba").val(tipoprueba(tipop));
             //--------------------------------
             if(marcakit(marcak) == "ERR") {
-                $("#marcadekit").css("color", "red");
+                $("#imarcadekit").css("color", "red");
             }
             else {
-                $("#marcadekit").css("color", "black");
+                $("#imarcadekit").css("color", "black");
             }
-            $("#marcadekit").val(marcakit(marcak));
+            $("#imarcadekit").val(marcakit(marcak));
             //--------------------------------
             if(tecnologia(tecno) == "ERR") {
-                $("#tecnologia").css("color", "red");
+                $("#itecnologia").css("color", "red");
             }
             else {
-                $("#tecnologia").css("color", "black");
+                $("#itecnologia").css("color", "black");
             }
-            $("#tecnologia").val(tecnologia(tecno)); 
+            $("#itecnologia").val(tecnologia(tecno)); 
             //--------------------------------
             if(capacidad(capac) == "ERR") {
-                $("#capacidades").css("color", "red");
+                $("#icapacidades").css("color", "red");
             }
             else {
-                $("#capacidades").css("color", "black");
+                $("#icapacidades").css("color", "black");
             }              
-            $("#capacidades").val(capacidad(capac));
+            $("#icapacidades").val(capacidad(capac));
             //--------------------------------
             if(destino(dest) == "ERR") {
-                $("#destino").css("color", "red");
+                $("#idestino").css("color", "red");
             }
             else {
-                $("#destino").css("color", "black");
+                $("#idestino").css("color", "black");
             }    
-            $("#destino").val(destino(dest));
+            $("#idestino").val(destino(dest));
             //--------------------------------
             if(funcion(func) == "ERR") {
-                $("#funcion").css("color", "red");
+                $("#ifuncion").css("color", "red");
             }
             else {
-                $("#funcion").css("color", "black");
+                $("#ifuncion").css("color", "black");
             }  
-            $("#funcion").val(funcion(func));
+            $("#ifuncion").val(funcion(func));
             //--------------------------------
         }
         else {
@@ -87,16 +87,16 @@ $(document).ready(function() {
         }
     });
 
-    $("#borrar").click(function() {
-        $("#tipodeprueba").val("");
-        $("#marcadekit").val("");
-        $("#tecnologia").val("");
-        $("#destino").val("");
-        $("#funcion").val("");
-        $("#capacidades").val("");
-        $("#codigo").css("color", "green")
-        $("#codigo").val("");
-        $("#codigo").focus();
+    $("#iborrar").click(function() {
+        $("#itipodeprueba").val("");
+        $("#imarcadekit").val("");
+        $("#itecnologia").val("");
+        $("#idestino").val("");
+        $("#ifuncion").val("");
+        $("#icapacidades").val("");
+        $("#icodigo").css("color", "green")
+        $("#icodigo").val("");
+        $("#icodigo").focus();
     });
 })
 

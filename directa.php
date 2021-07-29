@@ -52,6 +52,7 @@ $res6 = mysqli_query($conexion, $sql6);
                 <header>
                     <h5 hidden>Formulario</h5>
                 </header>
+                <!--Formulario de la calculadora-->
                 <form class="formulario">
                     <div class="row g-2">
                         <div class="col-md">
@@ -143,8 +144,10 @@ $res6 = mysqli_query($conexion, $sql6);
                         </div>
                     </div>  
                 </form>
+                <!--Fin formulario de la calculadora-->
                 <p></p>
             </section>
+            <!--Botones-->
             <section>
                 <header>
                     <h5 hidden>Código</h5>
@@ -159,6 +162,7 @@ $res6 = mysqli_query($conexion, $sql6);
                     </div>
                 </form>
             </section>
+            <!--Fin Botones-->
             <p></p>
             <p class="backhome"><a class="btn btn-outline-primary btn-sm" href="index.html" role="button">Menú principal</a></p>
             <a href=""></a>
