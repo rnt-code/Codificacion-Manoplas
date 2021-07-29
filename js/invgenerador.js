@@ -1,36 +1,35 @@
 $(document).ready(function() {
     
-    console.log("La página cargó")
-    
-    $("#codigo").focus();
-/*
-    $(document).keydown(function(e) {
-        if(e.keyCode == 13) {
-            console.log(e);
-            e.preventDefault();
-            return false;
-        }
-    });
-*/
-    $("#codigo").click(function() {
+    $("#itipodeprueba").val("");
+    $("#imarcadekit").val("");
+    $("#itecnologia").val("");
+    $("#idestino").val("");
+    $("#ifuncion").val("");
+    $("#icapacidades").val("");
+    $("#codingresado").css("color", "green")
+    $("#codingresado").val("");
+    $("#codingresado").focus();
+    $("#codingresado").focus();
 
-        var icode = $("#codigo").val();
-        var longitud = icode.length;
-        //console.log(longitud);
+    $("#leer").click(function() {
+
+        let icode = $("#codingresado").val();
+        let longitud = icode.length;
+
         if(longitud == 12) {
             icode = icode.toUpperCase();
-            var tipop = icode.slice(0,1);
-            var marcak = icode.slice(1,3);
-            var tecno = icode.slice(3,5);
-            var capac = icode.slice(5,8);
-            var dest = icode.slice(8,10);
-            var func = icode.slice(10);
+            let tipop = icode.slice(0,1);
+            let marcak = icode.slice(1,3);
+            let tecno = icode.slice(3,5);
+            let capac = icode.slice(5,8);
+            let dest = icode.slice(8,10);
+            let func = icode.slice(10);
             //--------------------------------
             if(tipoprueba(tipop) == "ERR" || marcakit(marcak) == "ERR" || tecnologia(tecno) == "ERR" || capacidad(capac) == "ERR" || destino(dest) == "ERR" || funcion(func) == "ERR") {
-                $("#codigo").css("color", "red");
+                $("#codingresado").css("color", "red");
             }
             else {
-                $("#codigo").css("color", "green");
+                $("#codingresado").css("color", "green");
             }
             //--------------------------------
             if(tipoprueba(tipop) == "ERR") {
@@ -94,9 +93,9 @@ $(document).ready(function() {
         $("#idestino").val("");
         $("#ifuncion").val("");
         $("#icapacidades").val("");
-        $("#icodigo").css("color", "green")
-        $("#icodigo").val("");
-        $("#icodigo").focus();
+        $("#codingresado").css("color", "green")
+        $("#codingresado").val("");
+        $("#codingresado").focus();
     });
 })
 

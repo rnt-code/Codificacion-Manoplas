@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    console.log("La página cargó")
-
     $("#dtipodeprueba").val("");
     $("#dmarcakit").val("");
     $("#dtecnologia").val("");
@@ -11,8 +9,7 @@ $(document).ready(function() {
     $("#dcapacidad2").prop("checked", false);
     $("#dcapacidad3").prop("checked", false);
     $("#dcapacidad4").prop("checked", false);
-    $("#codigo").val("");
-
+    $("#codcalculado").val("");
 
     $("#generar").click(function() {
         
@@ -27,29 +24,21 @@ $(document).ready(function() {
         let dfunc = $("#dfuncion").val();
         let dcapcod = dcapacidad(dcapac1, dcapac2, dcapac3, dcapac4);
         
-        console.log(dcapcod);
-        console.log(dcapac1);
-        console.log(dcapac2);
-        console.log(dcapac3);
-        console.log(dcapac4);
-
-        
         if(dcapac1 == false && dcapac2 == false && dcapac3 == false && dcapac4 == false) {
             dcode = "Faltan datos"
-            $("#codigo").css("color", "red")
+            $("#codcalculado").css("color", "red")
         }
         else {
             if(dtipop != null && dmarcak != null && dtecno != null && ddest != null && dfunc != null) {
                 var dcode = dtipop + "" + dmarcak + "" + dtecno + "" + dcapcod + "" + ddest + "" + dfunc;
-                $("#codigo").css("color", "green")
+                $("#codcalculado").css("color", "green")
             }
             else {
                 dcode = "Faltan datos"
-                $("#codigo").css("color", "red")
+                $("#codcalculado").css("color", "red")
             }
         }
-        $("#codigo").val(dcode);
-        console.log("Código = "+dcode);
+        $("#codcalculado").val(dcode);
     });
 
     $("#borrar").click(function() {
@@ -62,16 +51,15 @@ $(document).ready(function() {
         $("#dcapacidad2").prop("checked", false);
         $("#dcapacidad3").prop("checked", false);
         $("#dcapacidad4").prop("checked", false);
-        $("#codigo").val("");
+        $("#codcalculado").val("");
     });
 })
 
 function dcapacidad(dcapac1, dcapac2, dcapac3, dcapac4) {
     
-    let ddecimal = Number(dcapac4)*Math.pow(2,3) + Number(dcapac3)*Math.pow(2,2) + Number(dcapac2)*Math.pow(2,1) + Number(dcapac1)*Math.pow(2,0);
-    console.log(ddecimal);
-
-    switch(ddecimal) {
+    let decimal = Number(dcapac4)*Math.pow(2,3) + Number(dcapac3)*Math.pow(2,2) + Number(dcapac2)*Math.pow(2,1) + Number(dcapac1)*Math.pow(2,0);
+    
+    switch(decimal) {
 
         case 1:
             return "C00";

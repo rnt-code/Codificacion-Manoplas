@@ -1,20 +1,19 @@
 <?php
-include("conexion.php");
-$sql1 = "SELECT * FROM tipo_prueba";
-$res1 = mysqli_query($conexion, $sql1);
+    include("conexion.php");
+    $sql1 = "SELECT * FROM tipo_prueba";
+    $res1 = mysqli_query($conexion, $sql1);
 
-$sql2 = "SELECT * FROM marca_kit";
-$res2 = mysqli_query($conexion, $sql2);
+    $sql2 = "SELECT * FROM marca_kit";
+    $res2 = mysqli_query($conexion, $sql2);
 
-$sql3 = "SELECT * FROM tecnologia";
-$res3 = mysqli_query($conexion, $sql3);
+    $sql3 = "SELECT * FROM tecnologia";
+    $res3 = mysqli_query($conexion, $sql3);
 
-$sql5 = "SELECT * FROM destino";
-$res5 = mysqli_query($conexion, $sql5);
+    $sql5 = "SELECT * FROM destino";
+    $res5 = mysqli_query($conexion, $sql5);
 
-$sql6 = "SELECT * FROM funcion";
-$res6 = mysqli_query($conexion, $sql6);
-
+    $sql6 = "SELECT * FROM funcion";
+    $res6 = mysqli_query($conexion, $sql6);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,7 +31,6 @@ $res6 = mysqli_query($conexion, $sql6);
         <script src="js/dirgenerador.js"></script>
         <script src="js/invgenerador.js"></script>
         <script src="js/version.js"></script>
-
 
         <title>BSIP E. Nº UOA1391</title>
     </head>
@@ -54,13 +52,9 @@ $res6 = mysqli_query($conexion, $sql6);
             <div class="botones">
                 <div class="d-flex bd-highlight mb-3">
                     <div class="p-2 bd-highlight">
-                        <!--
-                        <button class="btn btn-primary" type="button" onclick="location.href='directa.php'">Calculadora directa</button>-->
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" >Calculadora directa</button>
                     </div>
                     <div class="p-2 bd-highlight">
-                        <!--
-                        <button class="btn btn-primary" type="button" onclick="location.href='inversa.html'">Calculadora inversa</button>-->
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" type="button">Calculadora inversa</button>
                     </div>
                     <div class="ms-auto p-2 bd-highlight">
@@ -178,6 +172,7 @@ $res6 = mysqli_query($conexion, $sql6);
                                 </div>  
                             </form>
                             <!--Fin formulario de la calculadora-->
+                            <p></p>
                             <!--Botones-->
                             <section>
                                 <header>
@@ -186,10 +181,10 @@ $res6 = mysqli_query($conexion, $sql6);
                                 <form class="formulario">
                                     <label>CODIGO calculado: </label>
                                     <div class="mb-3">
-                                        <input class="form-control" type="text" id="codigo" readonly="readonly">
+                                        <input class="form-control" type="text" id="codcalculado" readonly="readonly">
                                         <p></p>
                                         <button type="button" class="btn btn-primary" id="generar">Generar código</button>
-                                        <button type="button" class="btn btn-secondary btn-sm" id="borrar">Borrar</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" id="dborrar">Borrar</button>
                                     </div>
                                 </form>
                             </section>
@@ -218,8 +213,8 @@ $res6 = mysqli_query($conexion, $sql6);
                         <form class="formulario">
                             <label>INGRESAR CODIGO: </label>
                             <div class="mb-3">
-                                <input class="form-control" type="text" id="icodigo"><br>
-                                <button type="button" class="btn btn-primary" id="icodigo">Leer código</button>
+                                <input class="form-control" type="text" id="codingresado"><br>
+                                <button type="button" class="btn btn-primary" id="leer">Leer código</button>
                                 <button type="button" class="btn btn-secondary btn-sm" id="iborrar">Borrar</button>
                             </div>
                         </form>
@@ -246,7 +241,7 @@ $res6 = mysqli_query($conexion, $sql6);
                                 <input class="form-control" type="text" id="itecnologia" readonly="readonly">
                             </div>
                             <div class="mb-3">
-                                <label for="itecnologia" class="form-label">CAPACIDADES: </label>
+                                <label for="icapacidades" class="form-label">CAPACIDADES: </label>
                                 <input class="form-control" type="text" id="icapacidades" readonly="readonly">
                             </div>
                             <div class="row g-2">
