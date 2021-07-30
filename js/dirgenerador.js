@@ -41,16 +41,44 @@ $(document).ready(function() {
         $("#codcalculado").val(dcode);
     });
 
-    $("#borrar").click(function() {
+    $("#dborrar").click(function() {
         $("#dtipodeprueba").val("");
         $("#dmarcakit").val("");
         $("#dtecnologia").val("");
-        $("#ddestino").val("");
-        $("#dfuncion").val("");
         $("#dcapacidad1").prop("checked", false);
         $("#dcapacidad2").prop("checked", false);
         $("#dcapacidad3").prop("checked", false);
         $("#dcapacidad4").prop("checked", false);
+        $("#ddestino").val("");
+        $("#dfuncion").val("");
+        $("#codcalculado").val("");
+    });
+
+    $("#dtipodeprueba").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dmarcakit").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dtecnologia").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dcapacidad1").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dcapacidad2").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dcapacidad3").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dcapacidad4").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#ddestino").change(function() {
+        $("#codcalculado").val("");
+    });
+    $("#dfuncion").change(function() {
         $("#codcalculado").val("");
     });
 })

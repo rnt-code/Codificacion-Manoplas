@@ -75,21 +75,21 @@ $(document).ready(function() {
             //--------------------------------
         }
         else {
+            console.log("estamos acá");
             alert("Código erróneo");
         }
     });
 
     $("#iborrar").click(function() {
-        $("#itipodeprueba").val("");
-        $("#imarcadekit").val("");
-        $("#itecnologia").val("");
-        $("#idestino").val("");
-        $("#ifuncion").val("");
-        $("#icapacidades").val("");
-        $("#codingresado").css("color", "green")
-        $("#codingresado").val("");
-        $("#codingresado").focus();
+        borrar();
     });
+
+    /*
+    $("#codingresado").change(function() {
+        borrar();
+    });
+    */
+    
 })
 
 function tipoprueba(tipop) {
@@ -148,4 +148,25 @@ function funcion(func) {
     if(func == "UE") return "Unidad Exterior";
     if(func == "UI") return "Unidad Interior";
     return "ERR";
+}
+
+function borrar() {
+    $("#itipodeprueba").val("");
+    $("#imarcadekit").val("");
+    $("#itecnologia").val("");
+    $("#icapacidades").val("");
+    $("#idestino").val("");
+    $("#ifuncion").val("");
+    $("#codingresado").css("color", "green")
+    $("#codingresado").val("");
+    $("#codingresado").focus();
+}
+
+function borrar_resultados() {
+    $("#itipodeprueba").val("");
+    $("#imarcadekit").val("");
+    $("#itecnologia").val("");
+    $("#icapacidades").val("");
+    $("#idestino").val("");
+    $("#ifuncion").val("");
 }
