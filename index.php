@@ -67,7 +67,7 @@
                 <header>
                     <h5 hidden>Referencia rápida</h5>
                 </header>
-                <img class="spec" src="image/quickreference2.jpg" alt="quick reference">
+                <img class="img-fluid" src="image/cod_manoplas_sm.jpg" alt="quick reference">
             </section>
             <section>
                 <!--modal calc directa-->
