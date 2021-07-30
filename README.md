@@ -27,4 +27,10 @@ v2.2.0
 - Se actualizó la Especificación, se agregó la marca Samsung.
 21/07/2021
 
+v2.3.0
+- Se agregó la funcionalidad de poder configurar los parámetros desde la aplicación. La zona de configuración es privada y se accede con usuario y contraseña.
+- Las calculadoras ahora aparecen como un light-box (modal) por sobre la pantalla del index.hmtl.
+- La imagen de fondo se cambió de modo que no queden ocultas por las calculadoras una vez que estas se lanzan.
+30/07/2021
+
 --Ramón Taboada
