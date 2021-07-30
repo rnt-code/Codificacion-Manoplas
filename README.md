@@ -6,7 +6,7 @@ Incluye una calculadora inversa.
 
 Codificación de Manoplas - Especificación BSIP E.UOA1391
 
-v1.0 Lanzamiento
+v1.0 Lanzamiento.
 21/04/2021
 
 v1.01 
@@ -15,12 +15,12 @@ v1.01
 21/04/2021
 
 v2.0.0
-- Se escribe el código para la calculadora inversa
+- Se escribe el código para la calculadora inversa.
 29/04/2021
 
 v2.1.0
 - Se agregaron rutinas de error para la calculadora inversa
-- Se agregó la imagen de la Referencia Rápida en el index
+- Se agregó la imagen de la Referencia Rápida en el index.
 03/05/2021
 
 v2.2.0
