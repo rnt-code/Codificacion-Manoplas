@@ -36,4 +36,7 @@ v2.4.0
 - La imagen de fondo se cambió de modo que no queden ocultas por las calculadoras una vez que estas se lanzan.
 30/07/2021
 
+v2.5.0
+- Se introduce la marca AG
+
 --Ramón Taboada
