@@ -83,13 +83,6 @@ $(document).ready(function() {
     $("#iborrar").click(function() {
         borrar();
     });
-
-    /*
-    $("#codingresado").change(function() {
-        borrar();
-    });
-    */
-    
 })
 
 function tipoprueba(tipop) {
@@ -105,6 +98,7 @@ function marcakit(marcak) {
     if(marcak == "MD") return "Midea";
     if(marcak == "AX") return "Aux";
     if(marcak == "SM") return "Samsung";
+    if(marcak == "AG") return "AG";
     return "ERR";
 }
 
