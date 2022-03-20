@@ -28,7 +28,7 @@ v2.2.0
 21/07/2021
 
 v2.3.0
-- Se agregó la funcionalidad de poder configurar los parámetros desde la aplicación. La zona de configuración es privada y se accede con usuario y contraseña. Ahora los parámetros se pueden configurar desde la app, los parámetros se leen de una base de datos. Además la parte de configuración es privada sindo necesario contar con credenciales para ingresar.
+- Se agregó la funcionalidad de poder configurar los parámetros desde la aplicación. La zona de configuración es privada y se accede con usuario y contraseña. Ahora los parámetros se pueden configurar desde la app, los parámetros se leen de una base de datos. Además la parte de configuración es privada siendo necesario contar con credenciales para ingresar.
 28/07/2021
 
 v2.4.0
